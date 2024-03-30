@@ -1,0 +1,11 @@
+<nz-card *ngIf="trace$ | async as trace"
+  style="width:100%;"
+  class="card-graph"
+  nzTitle="Dynamic Graph">
+  <plotly-plot
+    [useResizeHandler]="true"
+    [config]="{displayModeBar: true, displaylogo: false}"
+    [data]="trace"
+    [layout]="layout">
+  </plotly-plot>
+</nz-card>
