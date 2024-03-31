@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, interval, of, timer } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { Observable, of, timer } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +21,10 @@ export class DataService {
   data$: Observable<{x: number[], y:number[], type: string, mode: string}[] | null> = of(null);
   fluctuation = 5;
 
-
   constructor() {}
 
   connect() {
-    // Connect to a websocket that regularly pushes data. 
+    // Simulate Connect to a websocket that regularly pushes data. 
     // Reformat to x/y data to plot.
     this.data$ = timer(0, 500)
       .pipe(
@@ -33,7 +32,6 @@ export class DataService {
           // We will show the 20 most recent values
           this.x.push(this.iter); 
           this.iter = this.iter + 1;
-          console.log('this.iter', this.iter)
           this.y0.push(Math.random() + this.fluctuation); // Random data
           this.y1.push(Math.random() + this.fluctuation); // Random data
           this.y2.push(Math.random() + this.fluctuation); // Random data
@@ -52,8 +50,6 @@ export class DataService {
             this.y5 = this.y5.slice(1, -1);
             this.y6 = this.y6.slice(1, -1);
             this.y7 = this.y7.slice(1, -1);
-            console.log('this.x', this.x)
-            console.log('this.y0', this.y0)
           }
           return [
             {x: this.x, y: this.y0, type: 'scatter', mode: 'lines+markers'}, 

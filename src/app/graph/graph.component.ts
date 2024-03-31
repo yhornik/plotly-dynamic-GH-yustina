@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { DataService } from '../data/services/data.service';
 
@@ -7,7 +7,7 @@ import { DataService } from '../data/services/data.service';
   templateUrl: './graph.component.html',
   styleUrls: ['./graph.component.scss']
 })
-export class GraphComponent {
+export class GraphComponent implements OnInit {
   trace$: Observable<any> = of({x: [], y: [], });
   layout = {
     title: 'Intensity vs Time',
