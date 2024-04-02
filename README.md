@@ -2,11 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 ## Create dynamic graph using plotly
-With the particularity we get only 20 last iteration to show in the graph
+With the particularity we get only 20 last iterations to show in the graph
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server or `yarn start`. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
